@@ -42,7 +42,7 @@ def show():
 def calcular(xm, ym, x, y):
     return (abs(xm - x) + abs(ym - y))
 
-def mover(x, y):
+def hillClimbing(x, y):
     distancias = [] 
     distancias.append(calcular(x[0] + 1, y[0], x[1], y[1]))
     distancias.append(calcular(x[0] - 1, y[0], x[1], y[1]))
@@ -78,7 +78,7 @@ sc = show()
 
 try:
     while(x[0] != x[1] or y[0] != y[1]):
-        x[0], y[0] = mover(x, y)
+        x[0], y[0] = hillClimbing(x, y)
         sc.remove()
         sc = show()
         if(x[0] == x[1] and y[0] == y[1]):
