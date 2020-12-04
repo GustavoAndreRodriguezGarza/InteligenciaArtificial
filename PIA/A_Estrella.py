@@ -46,7 +46,7 @@ def calcular(xm, ym, x0, y0, x1, y1):
         print()
     return None
 
-def mover(x, y):
+def a_estrella(x, y):
     minimo = 999999999999999999999999999
     ruta[x[0]+1][y[0]] = calcular(x[0] + 1, y[0], x[0], y[0], x[1], y[1])
     ruta[x[0]-1][y[0]] = calcular(x[0] - 1, y[0], x[0], y[0], x[1], y[1])
@@ -79,7 +79,7 @@ sc = show()
 
 try:
     while(x[0] != x[1] or y[0] != y[1]):
-        x[0], y[0] = mover(x, y)
+        x[0], y[0] = a_estrella(x, y)
         sc.remove()
         sc = show()
         if(x[0] == x[1] and y[0] == y[1]):
